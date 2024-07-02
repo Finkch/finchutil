@@ -13,8 +13,8 @@ local argv = env().argv
 -- Acquires target directory
 local path = nil
 if (not argv[1]) then
-	print("no directory specified, writing to temporary folder")
-	path = "desktop/temp"
+	print("no directory specified, writing to \"dump\"")
+	path = "desktop/dump"
 else
 	path = "desktop/" .. argv[1]
 end
