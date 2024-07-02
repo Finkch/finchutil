@@ -5,5 +5,5 @@ A handful of system utility functions for the fantasy workstation Picotron. Thes
 
 ## dump
 
-This command dumps the current cartridge in RAM to the specified folder on the desktop. If no folder is specified, it creates a folder called "dump".  
+This command dumps the current cartridge in RAM to the specified folder. If no folder is specified, it creates a folder called "dump".  
 Warning: this command deletes preexisting contents of the specified folder.
