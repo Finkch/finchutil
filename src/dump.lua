@@ -14,9 +14,9 @@ local argv = env().argv
 local path = nil
 if (not argv[1]) then
 	print("no directory specified, writing to \"dump\"")
-	path = "desktop/dump"
+	path = "dump"
 else
-	path = "desktop/" .. argv[1]
+	path = argv[1]
 end
 
 -- Clears directory if it exists
