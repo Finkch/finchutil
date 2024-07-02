@@ -13,7 +13,6 @@ local argv = env().argv
 -- Acquires target directory
 local path = nil
 if (not argv[1]) then
-	print("no directory specified, writing to \"dump\"")
 	path = "dump"
 else
 	path = argv[1]
@@ -47,3 +46,5 @@ for i = 1, #res do
 	local err = cp("ram/cart/" .. res[i], path .. "/" .. res[i])
 	if (err) print(err)
 end	
+
+print("dumped to /" .. path)
