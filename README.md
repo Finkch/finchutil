@@ -24,3 +24,8 @@ Warning: this command deletes preexisting contents of the specified folder.
 `revive` opens the target's primary working tabs, those being the `main.lua`, `gfx/0.gfx`, `map/0.map`, and `sfx/0.sfx`. If no target is specified, it uses `/ram/cart`.
 
 Caution! Picotron is still in development and revive has buggy behaviour when the target is already in memory; saving may not work propery. Use this function at your own risk.
+
+
+## startup.lua
+
+This startup file launches an instance of the terminal in the tooltray. It occupies a region in the top left of the tray, from the left side of the screen to just next to the current time.
