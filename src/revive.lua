@@ -59,3 +59,5 @@ end
 if (fstat(target .. "/sfx/0.sfx")) then
     create_process("/system/apps/sfx.p64", {argv={target .. "/sfx/0.sfx"}})
 end
+
+print("revived working tabs")
