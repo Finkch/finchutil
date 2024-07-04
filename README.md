@@ -2,6 +2,13 @@
 
 A handful of system utility functions for the fantasy workstation Picotron. These functions focus on integrating external editors into the Picotron workflow.
 
+## instilation
+
+To install this library, copy the `.lua` files from `src` into your Picotron's `util` folder (`/appdata/system/util`). If the `util` directory does not exist, make one at the location.  
+To install the startup script, copy `startup.lua` from the `startup` directory to your Picotron's `system` folder (`appdata/system`).  
+
+Alternatively, you can store the files on your host OS and mount the directory to its respective location on Picotron. To do so, edit your Picotron's `config` file (see [Picotron User Manual](https://www.lexaloffle.com/dl/docs/picotron_manual.html) for where to find the config file). You may mount the directory containing the files or the files themselves.
+
 
 ## dump
 
