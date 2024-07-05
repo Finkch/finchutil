@@ -24,14 +24,23 @@ function log(file, contents, argv)
         file = "log.txt"
     end
 
-    -- gets target path for easy reference
-    local target = "/appdata/logs/" .. file
-
     -- ensures the contents are a table
     if (type(contents) != "table") contents = {contents}
 
+
+
+    -- checks if the file is actually a file.
+    -- this mostly matters from calling this from the command line
+    if (not file:find(".", 1, true)) then
+        add(contents, file, 1)
+        file = "log.txt"
+    end
+
     -- ensures the logging folder exists
     if (not fstat("/appdata/logs")) mkdir("/appdata/logs")
+
+    -- gets target path for easy reference
+    local target = "/appdata/logs/" .. file
 
     -- ensures the file exists
     if (not fstat(target)) store(target, "")
