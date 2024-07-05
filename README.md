@@ -46,4 +46,4 @@ The `log` terminal command relies on the logging function (confusingly, both are
 
 This startup file does two things.  
 A terminal instance is launced to the in the tooltray. It occupies a region in the top left of the tray, from the left side of the screen to just next to the current time.  
-The logging function (not to be confused with the log terminal command) is mounted to `/ram/mount/log.lua`.  
+The logging function (not to be confused with the log terminal command) is mounted to `/ram/mount/log.lua`. This allows the logging function to be easily included by cartridges. To include the logger, use `include("../mount/log.lua")`. The logging function uses the same syntax as [log](#log) except the optional flag arguments (`-a`) is passed in a table as the last argument.  
