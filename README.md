@@ -6,6 +6,7 @@ A handful of system utility functions for the fantasy workstation Picotron. Thes
 
 To install this library, copy the `.lua` files from `src` into your Picotron's `util` folder (`/appdata/system/util`). If the `util` directory does not exist, make one at the location.  
 To install the startup script, copy `startup.lua` from the `startup` directory to your Picotron's `system` folder (`appdata/system`).  
+To install the logging function, copy the logging function file (from `finkchutil/logger/log.lua`) into Picotron's system folder (`/appdata/system`).  
 
 Alternatively, you can store the files on your host OS and mount the directory to its respective location on Picotron. To do so, edit your Picotron's `config` file (see [Picotron User Manual](https://www.lexaloffle.com/dl/docs/picotron_manual.html) for where to find the config file). You may mount the directory containing the files or the files themselves.
 
@@ -33,6 +34,16 @@ Warning: this command deletes preexisting contents of the specified folder.
 Caution! Picotron is still in development and revive has buggy behaviour when the target is already in memory; saving may not work propery. Use this function at your own risk.
 
 
+## log
+
+`log` will write to a text file in `appdata/logs`. The first non-flag argument is the file and everything else is the contents to write. There is no need to create the `logs` directory if it does not already exist, as that occurs automatically.  
+The `-a` flag will append to the file rather than overwriting the file contents.  
+If no file is specified, then it will write to `appdata/logs/log.txt`.  
+The `log` terminal command relies on the logging function (confusingly, both are named `log.lua`). If the logging function is not correctly installed, the `log` terminal command will not work.
+
+
 ## startup.lua
 
-This startup file launches an instance of the terminal in the tooltray. It occupies a region in the top left of the tray, from the left side of the screen to just next to the current time.
+This startup file does two things.  
+A terminal instance is launced to the in the tooltray. It occupies a region in the top left of the tray, from the left side of the screen to just next to the current time.  
+The logging function (not to be confused with the log terminal command) is mounted to `/ram/mount/log.lua`.  
