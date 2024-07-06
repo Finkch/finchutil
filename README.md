@@ -24,14 +24,15 @@ Warning: this command deletes preexisting contents of the specified folder.
 
 ## bind
 
-`bind` is similar to `mount` where it mounts an origin directory to a target location. Unlike `mount`, `bind` will delete any preexisting directory at the target location. Also unlike `mount`, if only one argument is specified then the argument is the origin and the target is `/ram/cart`.
+`bind` is similar to `mount` where it mounts an origin directory to a target location. Unlike `mount`, `bind` will delete any preexisting directory at the target location. Also unlike `mount`, if only one argument is specified then the argument is the origin and the target is `/ram/cart`.  
+If the target is `/ram/cart`, then the program workin context becomes the target.  
 
 
 ## revive
 
-`revive` opens the target's primary working tabs, those being the `main.lua`, `gfx/0.gfx`, `map/0.map`, and `sfx/0.sfx`. If no target is specified, it uses `/ram/cart`.
+`revive` opens the `/ram/cart`'s primary working tabs, those being the `main.lua`, `gfx/0.gfx`, `map/0.map`, and `sfx/0.sfx`. It will fail if there are current active tabs; all tabs must be closed.  
 
-Caution! Picotron is still in development and revive has buggy behaviour when the target is already in memory; saving may not work propery. Use this function at your own risk.
+Caution! Picotron is still in development and revive has buggy behaviour. Revive may need to be called twice for it to succeed.  
 
 
 ## log
