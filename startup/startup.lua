@@ -10,3 +10,4 @@ cd(env().path)
 create_process("../../system/apps/terminal.lua", {window_attribs = {workspace = "tooltray", x=2, y=2, width=360, height=80}})
 
 mount("../../ram/mount/log.lua", "log.lua")
+mount("../../ram/mount/printt.lua", "printt.lua")
