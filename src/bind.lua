@@ -33,15 +33,17 @@ if (not fstat(target)) then
     exit(0)
 end
 
+if (target == "/ram/cart") then
+	-- sets the target to be the current working directory
+	store("/ram/system/pwc.pod", "/" .. origin)
+end
+
 
 -- removes target location
 rm(target)
 
 -- mounts
 mount(target, origin)
-
--- sets the target to be the current working directory
-store("/ram/system/pwc.pod", "/" .. origin)
 
 -- gets directory type for printout
 local kind = fstat(origin)
