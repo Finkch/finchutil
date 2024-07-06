@@ -9,24 +9,9 @@
 
 cd(env().path)
 
-local target = env().argv[1]
-
-
--- default revive location
-if (not target) target = "/ram/cart"
-
--- ensures there's a slash at the start of the target
-if (target:sub(1, 1) != "/") target = "/" .. target
-
-
-if (not fstat(target)) then
-    print("cannot find target \"" .. target .. "\"")
-    exit(1)
-end
-
 
 -- checks if there are active tabs
-local p = fetch"/ram/system/processes.pod"
+local p = fetch("/ram/system/processes.pod")
 for i=1,#p do
     if p[i].name == "code" or p[i].name == "sfx" or p[i].name == "map" or p[i].name == "gfx" then
         print("cannot revive while there are open tabs")
@@ -34,13 +19,7 @@ for i=1,#p do
     end
 end
 
-
--- mounts the target for consistent ram access
-rm("/ram/mount/zyzygy")
-mount("/ram/mount/zyzygy" .. target, target)
-
--- updates target name
-target = "/ram/mount/zyzygy" .. target
+local target = "/ram/cart"
 
 
 -- opens an item in each of the four main groups
