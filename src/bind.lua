@@ -40,6 +40,9 @@ rm(target)
 -- mounts
 mount(target, origin)
 
+-- sets the target to be the current working directory
+store("/ram/system/pwc.pod", "/" .. origin)
+
 -- gets directory type for printout
 local kind = fstat(origin)
 
